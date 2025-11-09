@@ -1,0 +1,42 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Java artifacts
+*.class
+*.jar
+*.war
+*.ear
+hs_err_pid*
+replay_pid*
+
+# Build directories
+bin/
+out/
+target/
+build/
+.gradle/
+
+# IDE settings
+*.iml
+.idea/
+.vscode/
+.classpath
+.project
+.settings/
+
+# Logs
+*.log
+
+# Temp files
+*~
+*.swp
+*.swo
+
+# Coverage & reports
+coverage/
+.jacoco/
+
+# Misc
+Thumbs.db
