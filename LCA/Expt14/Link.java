@@ -1,6 +1,6 @@
 import java.util.*;
 
-// Concise LinkedList demo: add, addFirst/addLast, get, set, remove, contains, iterate
+
 public class Link {
 	public static void main(String[] args) {
 		LinkedList<String> l = new LinkedList<>();
