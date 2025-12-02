@@ -1,45 +1,55 @@
-interface FY {
-    void setFYData(int roll, String name, String result);
-    void displayFY();
+// Single interface for student data
+interface StudentData {
+    void setData(int roll, String name, String result);
+    void display();
 }
 
-interface SY {
-    void setSYData(int roll, String name, String result);
-    void displaySY();
+// First Year class
+class FY implements StudentData {
+    int roll;
+    String name;
+    String result;
+
+    public void setData(int roll, String name, String result) {
+        this.roll = roll;
+        this.name = name;
+        this.result = result;
+    }
+
+    public void display() {
+        System.out.println("FY: " + roll + ", " + name + ", " + result);
+    }
 }
 
-class Student implements FY, SY {
-    int fyRoll, syRoll;
-    String fyName, syName;
-    String fyResult, syResult;
+// Second Year class
+class SY implements StudentData {
+    int roll;
+    String name;
+    String result;
 
-    public void setFYData(int roll, String name, String result) {
-        fyRoll = roll; fyName = name; fyResult = result;
+    public void setData(int roll, String name, String result) {
+        this.roll = roll;
+        this.name = name;
+        this.result = result;
     }
 
-    public void setSYData(int roll, String name, String result) {
-        syRoll = roll; syName = name; syResult = result;
-    }
-
-    public void displayFY() {
-        System.out.println("FY: " + fyRoll + ", " + fyName + ", " + fyResult);
-    }
-
-    public void displaySY() {
-        System.out.println("SY: " + syRoll + ", " + syName + ", " + syResult);
-    }
-
-    public void displayBoth() {
-        displayFY();
-        displaySY();
+    public void display() {
+        System.out.println("SY: " + roll + ", " + name + ", " + result);
     }
 }
 
 public class Multiple {
     public static void main(String[] args) {
-        Student s = new Student();
-        s.setFYData(101, "John", "Pass");
-        s.setSYData(102, "John", "First Class");
-        s.displayBoth();
+        // Create both year objects
+        FY firstYear = new FY();
+        SY secondYear = new SY();
+        
+        // Set data for both years
+        firstYear.setData(101, "John", "Pass");
+        secondYear.setData(102, "John", "First Class");
+        
+        // Display both
+        firstYear.display();
+        secondYear.display();
     }
 }
